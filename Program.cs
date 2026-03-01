@@ -19,11 +19,11 @@ static IEnumerable<Product> GetProductsWithDynamicDiscount(
 
 static IEnumerable<Product> WithYield(List<Product> products, decimal discount)
 {
-    Console.WriteLine("  [WithYield] Method invoked!");
+    Console.WriteLine("[WithYield] Method invoked!");
 
     foreach (var p in products)
     {
-        Console.WriteLine($"  [WithYield] working on {p.Name}");
+        Console.WriteLine($"[WithYield] working on {p.Name}");
         yield return new Product
         {
             Id = p.Id,
@@ -33,17 +33,17 @@ static IEnumerable<Product> WithYield(List<Product> products, decimal discount)
         };
     }
 
-    Console.WriteLine("  [WithYield] Method finished!");
+    Console.WriteLine("[WithYield] Method finished!");
 }
 
 static List<Product> WithoutYield(List<Product> products, decimal discount)
 {
-    Console.WriteLine("  [WithoutYield] Method invoked!");
+    Console.WriteLine("[WithoutYield] Method invoked!");
 
     var result = new List<Product>();
     foreach (var p in products)
     {
-        Console.WriteLine($"  [WithoutYield] working on {p.Name}");
+        Console.WriteLine($"[WithoutYield] working on {p.Name}");
         result.Add(
             new Product
             {
@@ -55,41 +55,41 @@ static List<Product> WithoutYield(List<Product> products, decimal discount)
         );
     }
 
-    Console.WriteLine("  [WithoutYield] Method finished!");
+    Console.WriteLine("[WithoutYield] Method finished!");
     return result;
 }
 
 var products = new List<Product>
 {
-    new Product
+    new()
     {
         Id = 1,
         Name = "Laptop",
         Price = 1000,
         Category = "Electronics",
     },
-    new Product
+    new()
     {
         Id = 2,
         Name = "Mouse",
         Price = 20,
         Category = "Electronics",
     },
-    new Product
+    new()
     {
         Id = 3,
         Name = "Book",
         Price = 15,
         Category = "Books",
     },
-    new Product
+    new()
     {
         Id = 4,
         Name = "Pen",
         Price = 2,
         Category = "Office",
     },
-    new Product
+    new()
     {
         Id = 5,
         Name = "Monitor",
